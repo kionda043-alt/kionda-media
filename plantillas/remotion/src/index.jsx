@@ -5,6 +5,7 @@ import { Reel2, T2 } from './Reel2';
 import { Story1, Story2, Story3 } from './Stories';
 import { Reel3, T3 } from './Reel3';
 import { Ad, timing } from './Ad';
+import { Reel4, T4 } from './Reel4';
 
 const Root = () => (
   <Composition
@@ -21,6 +22,7 @@ const Root2 = () => (
     <Root />
     <Composition id="Reel2" component={Reel2} durationInFrames={T2.total} fps={30} width={1080} height={1920} />
     <Composition id="Reel3" component={Reel3} durationInFrames={T3.total} fps={30} width={1080} height={1920} />
+    <Composition id="Reel4" component={Reel4} durationInFrames={T4.total} fps={30} width={1080} height={1920} />
     <Composition id="AdA" component={Ad} defaultProps={{ hook: 'A', voice: 'voz-A.wav' }} durationInFrames={timing('A').total} fps={30} width={1080} height={1920} />
     <Composition id="AdB" component={Ad} defaultProps={{ hook: 'B', voice: 'voz-B.wav' }} durationInFrames={timing('B').total} fps={30} width={1080} height={1920} />
     <Composition id="AdC" component={Ad} defaultProps={{ hook: 'C', voice: 'voz-C.wav' }} durationInFrames={timing('C').total} fps={30} width={1080} height={1920} />
