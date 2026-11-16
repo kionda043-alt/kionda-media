@@ -17,14 +17,14 @@ export const T4 = {
   imgs: { gancho: 'carta-gancho.png', ia: 'carta-ia.png', cierre: 'carta-cierre.png', clip: 'carta-clip.mp4' },
 };
 
-const BRAND = '#1F5E4A';
+export const BRAND = '#1F5E4A';
 const SCREEN = '#FFF0E2';
 
-const EjemploTag = ({ dark }) => (
+export const EjemploTag = ({ dark }) => (
   <span style={{ fontFamily: BODY, fontWeight: 700, fontSize: 20, border: `3px solid ${dark ? C.cream : C.navy}`, color: dark ? C.cream : C.navy, padding: '3px 12px', borderRadius: 18 }}>Ejemplo</span>
 );
 
-const Phone = ({ children, top = 600, height = 1020, enterAt = 0, left = 205, width = 670 }) => {
+export const Phone = ({ children, top = 600, height = 1020, enterAt = 0, left = 205, width = 670 }) => {
   const f = useCurrentFrame();
   const enter = interpolate(f, [enterAt, enterAt + 16], [0, 1], { ...clamp, easing: ease });
   return (
@@ -38,7 +38,7 @@ const Phone = ({ children, top = 600, height = 1020, enterAt = 0, left = 205, wi
 };
 
 // barra superior del panel del dueño
-const OwnerBar = ({ tab }) => (
+export const OwnerBar = ({ tab }) => (
   <div style={{ background: C.navy, padding: '46px 30px 18px' }}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
       <span style={{ fontFamily: TITLE, fontWeight: 700, fontSize: 30, color: C.cream }}>La Esquina</span>
@@ -54,7 +54,7 @@ const OwnerBar = ({ tab }) => (
   </div>
 );
 
-const Card = ({ children, style }) => (
+export const Card = ({ children, style }) => (
   <div style={{ background: C.white, borderRadius: 26, padding: 26, margin: '22px 22px 0', boxShadow: '0 4px 12px rgba(20,17,43,0.06)', ...style }}>{children}</div>
 );
 
@@ -90,7 +90,7 @@ const PaperMenu = ({ strikeFrom = 9999, x = 150, y = 640, rot = -4 }) => {
   );
 };
 
-const BgImage = ({ src, dur, from = 1.0, to = 1.08, opacity = 1 }) => {
+export const BgImage = ({ src, dur, from = 1.0, to = 1.08, opacity = 1 }) => {
   const f = useCurrentFrame();
   const s = interpolate(f, [0, dur], [from, to], clamp);
   return <Img src={staticFile(src)} style={{ position: 'absolute', inset: 0, width: 1080, height: 1920, objectFit: 'cover', transform: `scale(${s})`, opacity }} />;
@@ -216,7 +216,7 @@ const S3 = ({ dur }) => {
 };
 
 // ---------- carta pública (lo que ve el cliente) ----------
-const PublicMenu = ({ color, logoP = 1, items = [['Café espresso', '$2.800'], ['Café con leche', '$3.500'], ['Capuchino', '$4.200'], ['Medialunas', '$1.200']], soldOut = -1, priceOverride, priceFlash = 0 }) => (
+export const PublicMenu = ({ color, logoP = 1, items = [['Café espresso', '$2.800'], ['Café con leche', '$3.500'], ['Capuchino', '$4.200'], ['Medialunas', '$1.200']], soldOut = -1, priceOverride, priceFlash = 0 }) => (
   <div style={{ position: 'absolute', inset: 0, background: '#F4F1EA' }}>
     <div style={{ background: color, padding: '60px 0 34px', textAlign: 'center' }}>
       <div style={{ width: 130, height: 130, borderRadius: 65, margin: '0 auto', border: '5px solid rgba(255,255,255,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `scale(${logoP})`, opacity: Math.min(1, logoP * 1.4), background: 'rgba(255,255,255,0.08)' }}>
